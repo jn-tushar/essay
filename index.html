@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="বাংলা ভাষায় IELTS Writing Task 2 Band 8–9 শেখার জন্য পূর্ণাঙ্গ Essay Lab web app।" />
+  <title>IELTS Essay Lab — বাংলা Band 8–9 Writing App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="IELTS Essay Lab হোম">
+        <span class="brand-mark">IELTS</span>
+        <span>
+          <strong>Essay Lab</strong>
+          <small>বাংলা-প্রথম Band 8–9 Writing System</small>
+        </span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="themeBtn" title="থিম বদলান" aria-label="থিম বদলান">☼</button>
+        <button class="menu-btn" id="menuBtn" aria-label="মেনু খুলুন">☰</button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="side-profile">
+        <div class="avatar">8+</div>
+        <div>
+          <strong>Band Builder</strong>
+          <span>শেখো → অনুশীলন করো → refine করো</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="nav-link active" href="#home">⌂ <span>ড্যাশবোর্ড</span></a>
+        <a class="nav-link" href="#roadmap">◈ <span>শেখার পথ</span></a>
+        <a class="nav-link" href="#tutorial">☰ <span>পূর্ণ টিউটোরিয়াল</span></a>
+        <a class="nav-link" href="#vocabulary">Aa <span>Vocabulary Deck</span></a>
+        <a class="nav-link" href="#sentences">✎ <span>Sentence Lab</span></a>
+        <a class="nav-link" href="#planner">▤ <span>Essay Planner</span></a>
+        <a class="nav-link" href="#practice">◷ <span>৪০ মিনিটের Practice</span></a>
+        <a class="nav-link" href="#quiz">✓ <span>Knowledge Check</span></a>
+        <a class="nav-link" href="#notes">✦ <span>আমার Notes</span></a>
+      </nav>
+      <div class="side-tip">
+        <span class="tip-label">মূল নিয়ম</span>
+        <p>পুরো essay মুখস্থ কোরো না। ভালো চিন্তা ও ভালো English-এর building blocks শেখো, তারপর নতুন প্রশ্নে সেগুলো মানিয়ে নাও।</p>
+      </div>
+    </aside>
+
+    <main class="main" id="main">
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <span class="eyebrow">শূন্য থেকে advanced writing-এর পূর্ণ পথ</span>
+          <h1>এমন essay লেখো যা<br><em>পরিষ্কার, developed ও human.</em></h1>
+          <p>পুরো বাংলা টিউটোরিয়াল পড়ো, high-band sentence pattern অনুশীলন করো, argument build করো, vocabulary active করো, সময় ধরে essay লেখো এবং নিজের progress এক জায়গায় track করো।</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#roadmap">শেখার পথ শুরু করো →</a>
+            <a class="secondary-btn" href="#tutorial">পূর্ণ টিউটোরিয়াল খুলুন</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="orbital"><span>8–9</span></div>
+          <div class="hero-mini-grid">
+            <div><strong>৪</strong><span>মূল IELTS মানদণ্ড</span></div>
+            <div><strong>৪০</strong><span>মিনিটের practice</span></div>
+            <div><strong>২০০</strong><span>core lessons</span></div>
+            <div><strong>১</strong><span>একীভূত writing system</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="panel progress-panel">
+          <div class="panel-head">
+            <div><span class="kicker">তোমার অগ্রগতি</span><h2>Script নয়, skill তৈরি করো</h2></div>
+            <span class="progress-pct" id="progressPct">০%</span>
+          </div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <div class="module-progress" id="moduleProgress"></div>
+        </div>
+        <div class="panel principle-panel">
+          <span class="kicker">টার্গেট</span>
+          <h2>Argument density + readability</h2>
+          <p>High-band essay জটিল শোনানোর চেষ্টা করবে না। বরং purposeful হবে: <b>Position → Point → Why → Example → Consequence → Qualification → Conclusion</b>।</p>
+          <div class="mini-pill-row"><span>Natural</span><span>Precise</span><span>Coherent</span><span>Controlled</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-head">
+          <div><span class="kicker">শেখার পথ</span><h2>Basic control থেকে advanced writing</h2><p>একবার ধারাবাহিকভাবে এগিয়ে যাও। পরে practice-এ যে জায়গা দুর্বল, সেখানে ফিরে এসো।</p></div>
+        </div>
+        <div class="roadmap" id="roadmapGrid"></div>
+      </section>
+
+      <section class="section" id="tutorial">
+        <div class="section-head tutorial-head">
+          <div><span class="kicker">পূর্ণ বাংলা টিউটোরিয়াল</span><h2>২০০ ধাপের শেখার সিস্টেম</h2><p>idea, phrase, grammar, cohesion বা IELTS task type দিয়ে খুঁজে lesson বের করো। “সম্পন্ন” করলে নিজের study trail তৈরি হবে।</p></div>
+          <div class="search-wrap"><span>⌕</span><input id="tutorialSearch" type="search" placeholder="খুঁজুন: thesis, cohesion, technology, despite…" /></div>
+        </div>
+        <div class="module-tabs" id="moduleTabs"></div>
+        <div class="tutorial-list" id="tutorialList"></div>
+      </section>
+
+      <section class="section" id="vocabulary">
+        <div class="section-head">
+          <div><span class="kicker">VOCABULARY DECK</span><h2>একক শব্দ নয়, usable phrase শেখো</h2><p>প্রতিটি card-এ থাকবে English phrase, বাংলা উচ্চারণ, বাংলা অর্থ এবং English example-এর বাংলা ব্যাখ্যা।</p></div>
+          <button class="secondary-btn" id="shuffleVocab">Deck এলোমেলো করুন</button>
+        </div>
+        <div class="vocab-layout">
+          <div class="flashcard" id="flashcard">
+            <div class="flash-top"><span id="vocabTag">Academic phrase</span><span id="vocabCount">১ / ৬১</span></div>
+            <div class="flash-main">
+              <div class="flash-word" id="vocabWord">economic resilience</div>
+              <div class="pron" id="vocabPron">ইকোনমিক রেজিলিয়েন্স</div>
+              <div class="meaning" id="vocabMeaning">অর্থনৈতিক ধাক্কা সামলে পুনরুদ্ধারের সক্ষমতা</div>
+            </div>
+            <div class="flash-example" id="vocabExample">Economic diversification can strengthen economic resilience.</div>
+            <div class="flash-example bn-example" id="vocabExampleBn">অর্থনীতির বহুমুখীকরণ অর্থনৈতিক ধাক্কা সামলে পুনরুদ্ধারের সক্ষমতা বাড়াতে পারে।</div>
+            <button class="ghost-btn" id="nextVocab">পরের card →</button>
+          </div>
+          <div class="panel vocab-rules">
+            <span class="kicker">কীভাবে পড়বে</span>
+            <h3>Vocabulary-কে active করো</h3>
+            <p>১. English phrase-টি জোরে পড়ো।</p>
+            <p>২. না দেখে বাংলা অর্থ মনে করো।</p>
+            <p>৩. নিজের একটি sentence বানাও।</p>
+            <p>৪. একই দিনে একটি paragraph-এ phrase-টি আবার ব্যবহার করো।</p>
+            <div class="callout">লক্ষ্য: passive vocabulary → active vocabulary</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sentences">
+        <div class="section-head"><div><span class="kicker">SENTENCE LAB</span><h2>সাধারণ idea-কে analytical sentence-এ upgrade করো</h2><p>“Fancy English” নয়; idea-গুলোর relationship আরও পরিষ্কার করা লক্ষ্য।</p></div></div>
+        <div class="upgrade-grid">
+          <div class="panel upgrade-card"><span class="level">LEVEL ১ — simple</span><div>Technology is useful.</div><small>প্রযুক্তি উপকারী।</small></div>
+          <div class="arrow">→</div>
+          <div class="panel upgrade-card"><span class="level">LEVEL ২ — reason</span><div>Technology is useful because it saves time.</div><small>কারণ যোগ হয়েছে: এটি সময় বাঁচায়।</small></div>
+          <div class="arrow">→</div>
+          <div class="panel upgrade-card"><span class="level">LEVEL ৩ — nuance</span><div>Although technology saves time, excessive reliance on it may weaken face-to-face interaction.</div><small>এখানে concession + condition/qualification এসেছে।</small></div>
+        </div>
+        <div class="sentence-tools">
+          <div class="panel">
+            <span class="kicker">PATTERN BANK</span>
+            <p class="micro-note">একটি pattern-এ চাপ দিলে English skeleton-টি নিচের box-এ বসে যাবে। তারপর নিজের topic দিয়ে পূরণ করো।</p>
+            <div class="pattern-list" id="patternList"></div>
+          </div>
+          <div class="panel">
+            <span class="kicker">তোমার পালা</span>
+            <textarea id="sentencePractice" placeholder="উপরের একটি pattern ব্যবহার করে English sentence লেখো…"></textarea>
+            <div class="tool-row"><button class="primary-btn" id="saveSentence">Sentence সংরক্ষণ</button><span id="sentenceSaved" class="status-text"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="planner">
+        <div class="section-head"><div><span class="kicker">ESSAY PLANNER</span><h2>Question থেকে argument বানাও</h2><p>৫ মিনিটে plan করো। Planning-এর সময় পুরো sentence draft কোরো না।</p></div></div>
+        <div class="planner-grid">
+          <div class="panel planner-form">
+            <label>Essay question
+              <textarea id="essayQuestion" placeholder="এখানে IELTS Writing Task 2 প্রশ্ন paste করো…"></textarea>
+            </label>
+            <label>প্রশ্নের ধরন
+              <select id="taskType">
+                <option value="To what extent do you agree or disagree?">কতটা একমত বা দ্বিমত?</option>
+                <option value="Advantages / disadvantages">Advantages / disadvantages</option>
+                <option value="Discuss both views + opinion">দুই মত আলোচনা + নিজের মত</option>
+                <option value="Causes + solutions">Causes + solutions</option>
+                <option value="Positive / negative development">Positive / negative development</option>
+              </select>
+            </label>
+            <label>তোমার position
+              <textarea id="position" placeholder="একটি পরিষ্কার sentence-এ নিজের answer লেখো…"></textarea>
+            </label>
+          </div>
+          <div class="panel planner-form">
+            <label>Body 1 — মূল point
+              <textarea id="body1" placeholder="Point → Why → Example → Result"></textarea>
+            </label>
+            <label>Body 2 — মূল point / counterargument
+              <textarea id="body2" placeholder="Point → Why → Example → Qualification → Result"></textarea>
+            </label>
+            <label>Conclusion
+              <textarea id="conclusion" placeholder="Judgement restate + final implication"></textarea>
+            </label>
+            <div class="tool-row"><button class="primary-btn" id="savePlan">Plan সংরক্ষণ</button><span id="planSaved" class="status-text"></span></div>
+          </div>
+        </div>
+        <div class="plan-hints" id="planHints"></div>
+      </section>
+
+      <section class="section" id="practice">
+        <div class="section-head"><div><span class="kicker">৪০ মিনিটের PRACTICE</span><h2>বাস্তব writing task-এর simulation</h2><p>৪-Paragraph structure স্বচ্ছন্দে লিখতে পারার পরে timer ব্যবহার করো।</p></div></div>
+        <div class="practice-grid">
+          <div class="panel timer-panel">
+            <span class="kicker">TIMER</span>
+            <div class="timer" id="timer">40:00</div>
+            <div class="timer-controls"><button class="primary-btn" id="startTimer">শুরু</button><button class="secondary-btn" id="pauseTimer">বিরতি</button><button class="ghost-btn" id="resetTimer">Reset</button></div>
+            <div class="time-phases"><span><b>০–৫</b> বিশ্লেষণ</span><span><b>৫–৮</b> plan</span><span><b>৮–৩০</b> লেখা</span><span><b>৩০–৪০</b> proofreading</span></div>
+          </div>
+          <div class="panel writing-pad">
+            <span class="kicker">PRACTICE PAD</span>
+            <div class="word-tools"><span id="wordCount">০ শব্দ</span><button class="ghost-btn" id="clearPractice">খালি করুন</button></div>
+            <textarea id="essayPad" placeholder="এখানে তোমার English essay লেখো…"></textarea>
+          </div>
+        </div>
+        <div class="prompt-strip" id="promptStrip"></div>
+      </section>
+
+      <section class="section" id="quiz">
+        <div class="section-head"><div><span class="kicker">KNOWLEDGE CHECK</span><h2>High-band writing চিনতে পারো?</h2><p>১৫টি প্রশ্ন। ভুল হলে explanation পড়ে কোন skill revise করবে ঠিক করো।</p></div></div>
+        <div class="quiz-card panel" id="quizCard"></div>
+      </section>
+
+      <section class="section" id="notes">
+        <div class="section-head"><div><span class="kicker">আমার NOTES</span><h2>নিজের example, ভুল ও correction জমাও</h2><p>Notes তোমার browser-এ এই device-এই সংরক্ষিত থাকবে।</p></div></div>
+        <div class="notes-grid">
+          <div class="panel"><textarea id="notesBox" class="notes-box" placeholder="নিজের example, recurring mistake, useful phrase, teacher feedback ইত্যাদি লিখো…"></textarea><div class="tool-row"><button class="primary-btn" id="saveNotes">Notes সংরক্ষণ</button><span id="notesSaved" class="status-text"></span></div></div>
+          <div class="panel checklist"><span class="kicker">EXAM CHECK</span>
+            <label><input type="checkbox"> আমি প্রশ্নের প্রতিটি অংশের উত্তর দিয়েছি।</label>
+            <label><input type="checkbox"> আমার position পরিষ্কার ও consistent।</label>
+            <label><input type="checkbox"> প্রতিটি main idea ব্যাখ্যা করা হয়েছে।</label>
+            <label><input type="checkbox"> আমার example relevant।</label>
+            <label><input type="checkbox"> আমি precise collocation ব্যবহার করেছি।</label>
+            <label><input type="checkbox"> অধিকাংশ sentence grammar-এর দিক থেকে নির্ভুল।</label>
+            <label><input type="checkbox"> Conclusion-এ নতুন main idea নেই।</label>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div><strong>IELTS Essay Lab</strong><span>বাংলা টিউটোরিয়ালভিত্তিক Band 8–9 writing companion.</span></div>
+        <div class="footer-right"><span>Static • offline-first</span><button class="ghost-btn" id="resetProgress">সব progress reset</button></div>
+      </footer>
+    </main>
+  </div>
+  <script src="tutorial.js"></script>
+  <script src="bn_layer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
